@@ -1,0 +1,51 @@
+interface InstrumentElements {
+    airspeedNeedle: HTMLElement | null;
+    airspeedValue: HTMLElement | null;
+    airspeedControl: HTMLInputElement | null;
+    airspeedControlValue: HTMLElement | null;
+    vsiNeedle: HTMLElement | null;
+    vsiValue: HTMLElement | null;
+    verticalSpeedControl: HTMLInputElement | null;
+    verticalSpeedControlValue: HTMLElement | null;
+    altHundreds: HTMLElement | null;
+    altThousands: HTMLElement | null;
+    altimeterNeedle: HTMLElement | null;
+    altitudeControl: HTMLInputElement | null;
+    altitudeControlValue: HTMLElement | null;
+    turnBall: HTMLElement | null;
+    planeIcon: HTMLElement | null;
+    turnRateDisplay: HTMLElement | null;
+    turnRateControl: HTMLInputElement | null;
+    turnRateControlValue: HTMLElement | null;
+    horizonBackground: HTMLElement | null;
+    pitchControl: HTMLInputElement | null;
+    pitchControlValue: HTMLElement | null;
+    compassRose: HTMLElement | null;
+    headingValue: HTMLElement | null;
+    headingControl: HTMLInputElement | null;
+    headingControlValue: HTMLElement | null;
+    flightStatus: HTMLElement | null;
+}
+declare class AviationInstrumentPanel {
+    private airspeed;
+    private altitude;
+    private verticalSpeed;
+    private turnRate;
+    private heading;
+    private pitch;
+    private elements;
+    constructor();
+    private initializeElements;
+    private bindEvents;
+    private updateAirspeed;
+    private updateAltitude;
+    private updateVerticalSpeed;
+    private updateTurnRate;
+    private updateHeading;
+    private updatePitch;
+    private createGaugeMarkings;
+    private createAirspeedMarkings;
+    private createVSIMarkings;
+    private createAltimeterMarkings;
+    private animate;
+}
