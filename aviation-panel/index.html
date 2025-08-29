@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation 6-Pack Instrument Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aviation 6-Pack Instrument Panel</h1>
+
+        <!-- Top Row -->
+        <div class="instrument-row top-row">
+            <!-- Airspeed Indicator -->
+            <div class="instrument airspeed-indicator">
+                <div class="instrument-face">
+                    <div class="instrument-center">
+                        <div class="needle airspeed-needle"></div>
+                    </div>
+                    <div class="airspeed-display">
+                        <span id="airspeed-value">0</span>
+                        <span class="airspeed-unit">KTS</span>
+                    </div>
+                    <div class="instrument-name">AIRSPEED</div>
+                </div>
+            </div>
+
+            <!-- Vertical Speed Indicator -->
+            <div class="instrument vsi">
+                <div class="instrument-face">
+                    <div class="instrument-center">
+                        <div class="needle vsi-needle"></div>
+                    </div>
+                    <div class="vsi-display">
+                        <span id="vsi-value">0</span>
+                        <span class="vsi-unit">FPM</span>
+                    </div>
+                    <div class="instrument-name">VERTICAL SPEED</div>
+                </div>
+            </div>
+
+            <!-- Altimeter -->
+            <div class="instrument altimeter">
+                <div class="instrument-face">
+                    <div class="altimeter-drum">
+                        <div class="altimeter-hundreds">
+                            <span id="alt-hundreds">00</span>
+                        </div>
+                        <div class="altimeter-thousands">
+                            <span id="alt-thousands">00</span>
+                        </div>
+                    </div>
+                    <div class="altimeter-needle"></div>
+                    <div class="instrument-name">ALTIMETER</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row -->
+        <div class="instrument-row middle-row">
+            <!-- Turn Coordinator -->
+            <div class="instrument turn-coordinator">
+                <div class="instrument-face">
+                    <div class="turn-ball"></div>
+                    <div class="plane-icon">✈</div>
+                    <div class="magnetic-north">N</div>
+                    <div class="turn-rate-display">
+                        <span id="turn-rate">0°/SEC</span>
+                    </div>
+                    <div class="instrument-name">TURN COORDINATOR</div>
+                </div>
+            </div>
+
+            <!-- Attitude Indicator -->
+            <div class="instrument attitude-indicator">
+                <div class="instrument-face">
+                    <div class="horizon-background">
+                        <div class="sky"></div>
+                        <div class="ground"></div>
+                        <div class="horizon-line"></div>
+                    </div>
+                    <div class="aircraft-symbol">✈</div>
+                    <div class="pitch-ladder">
+                        <div class="pitch-line pitch-up-10">10°</div>
+                        <div class="pitch-line pitch-up-5">5°</div>
+                        <div class="pitch-line pitch-down-5">-5°</div>
+                        <div class="pitch-line pitch-down-10">-10°</div>
+                    </div>
+                    <div class="instrument-name">ATTITUDE</div>
+                </div>
+            </div>
+
+            <!-- Heading Indicator -->
+            <div class="instrument heading-indicator">
+                <div class="instrument-face">
+                    <div class="compass-rose">
+                        <div class="heading-card">
+                            <span class="heading-mark">N</span>
+                            <span class="heading-mark">E</span>
+                            <span class="heading-mark">S</span>
+                            <span class="heading-mark">W</span>
+                        </div>
+                        <div class="heading-needle">▲</div>
+                    </div>
+                    <div class="heading-display">
+                        <span id="heading-value">000°</span>
+                    </div>
+                    <div class="instrument-name">HEADING</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="airspeed-control">Airspeed (kts):</label>
+                <input type="range" id="airspeed-control" min="0" max="300" value="120">
+                <span id="airspeed-control-value">120</span>
+            </div>
+
+            <div class="control-group">
+                <label for="altitude-control">Altitude (ft):</label>
+                <input type="range" id="altitude-control" min="0" max="25000" value="5500">
+                <span id="altitude-control-value">5500</span>
+            </div>
+
+            <div class="control-group">
+                <label for="vertical-speed-control">Vertical Speed (fpm):</label>
+                <input type="range" id="vertical-speed-control" min="-2000" max="2000" value="0">
+                <span id="vertical-speed-control-value">0</span>
+            </div>
+
+            <div class="control-group">
+                <label for="turn-rate-control">Turn Rate (°/sec):</label>
+                <input type="range" id="turn-rate-control" min="-6" max="6" value="0" step="0.1">
+                <span id="turn-rate-control-value">0</span>
+            </div>
+
+            <div class="control-group">
+                <label for="heading-control">Heading (°):</label>
+                <input type="range" id="heading-control" min="0" max="360" value="0">
+                <span id="heading-control-value">0</span>
+            </div>
+
+            <div class="control-group">
+                <label for="pitch-control">Pitch (°):</label>
+                <input type="range" id="pitch-control" min="-20" max="20" value="0" step="0.5">
+                <span id="pitch-control-value">0</span>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-item">
+                <span class="label">Flight Status:</span>
+                <span id="flight-status" class="value">LEVEL FLIGHT</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Optimal Speed Range:</span>
+                <span class="value">60-180 KTS</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Stall Speed:</span>
+                <span class="value">55 KTS</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
